@@ -2,12 +2,9 @@ const { Connection, Keypair, VersionedTransaction } = require('@solana/web3.js')
 const axios = require('axios');
 const { Wallet } = require('@project-serum/anchor');
 const bs58 = require('bs58');
-// const decoded = bs58.decode('3yZe7d');
 require('dotenv').config();
 console.log('Imported bs58:', bs58);
 
-// It is recommended that you use your own RPC endpoint.
-// This RPC endpoint is only for demonstration purposes so that this example will run.
 const connection = new Connection('https://api.mainnet-beta.solana.com');
 
 const wallet = new Wallet(Keypair.fromSecretKey(bs58.decode(process.env.PRIVATE_KEY)));
